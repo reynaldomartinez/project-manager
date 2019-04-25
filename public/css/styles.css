@@ -4,7 +4,6 @@ html,body{
 
 h1, h2{
     font-family: 'Open Sans', sans-serif;
-    color: #9ACAFB;
 }
 
 /*.list-group-item {*/
@@ -16,42 +15,70 @@ h1, h2{
     background: none;
 }
 
-.card{
+.cards{
     background: #fff;
     border: none;
     height:180px;
     margin-bottom: 20px;
+    transition: all .3s ease-in-out;
 }
 
-.card:hover{
+.cards:hover{
     border: 1px solid #A3E4D7;
+    transform: scale(1.1);
 }
 
 .card-header{
-    background: #fff;
+    background: none;
     border-bottom: none;
+
 }
 
 .card-body{
     margin-left: 3px;
+    padding-top: 0;
+}
+
+.create-card{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.create-top-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-control:focus{
+    box-shadow: none;
 }
 
 .list-group{
     border: 1px solid rgba(0,0,0,.125);
+    margin-top: 13px;
 }
 
-.list-group-item{
+.updates{
     border: none;
     background: none !important;
     transition: all .2s ease-in-out;
 }
 
-.list-group-item:hover{
-    border: 3px solid #A3E4D7 !important;
+.updates:hover{
+    border: 5px solid #A3E4D7 !important;
     background: #A3E4D7 !important;
     transform: scale(1.1);
 }
 
+/*.name-project-add{*/
+    /*width: 74.5%;*/
+    /*display:flex;*/
+    /*justify-content: space-between;*/
+/*}*/
+
 .project-header{
     border-left: 3px solid #A3E4D7;
+    padding: 20px !important;
+    margin-top: 10px !important;
 }

@@ -19,6 +19,11 @@ Route::get('/', function () {
    return view('pages.home');
 });
 
+Route::resource('/project', 'ProjectController');
+
+Route::resource('/project/task', 'TaskController');
+
 Auth::routes();
 
+//CHANGE TO DASHBOARD INSTEAD OF HOME
 Route::get('/home', 'HomeController@index')->name('home');
