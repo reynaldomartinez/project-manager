@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use App\Task;
-use App\User;
 use DB;
 use Illuminate\Http\Request;
 
@@ -38,24 +37,17 @@ class TaskController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Task $task, Project $project)
+    public function store(Request $request, Project $project, Task $task)
     {
-        //
-//        $tasks = request()->validate([
-//            'task' => 'required|min:2'
-//        ]);
-////        dd(auth()->user()->id);
+        $tasks = request()->validate([
+                    'task' => 'required|min:2'
+                ]);
+//        dd($tasks);
+//////        dd(auth()->user()->id);
+        $tasks['project_id'] = $project->id;
+        Task::create($tasks);
 //
-//        $tasks['project_id'];
-//
-//        Task::create([$tasks]);
-        $tasks = new Task;
-
-        $tasks->task = request('task');
-        $project_id = DB::table('projects')->get('id');
-        dd($project_id);
-
-        $tasks->save();
+//            $project->addTask($tasks);
 
         return redirect()->back();
     }

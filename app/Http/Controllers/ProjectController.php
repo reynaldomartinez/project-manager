@@ -62,7 +62,6 @@ class ProjectController extends Controller
         //
         $projects = $project;
 
-
         return view('pages.view-project', compact('projects'));
     }
 

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     //
-    protected $fillable = ['title', 'description', 'user_id'];
+    protected $fillable = ['title', 'description', 'user_id', 'project_id'];
 
     public function user()
     {
@@ -17,5 +17,10 @@ class Project extends Model
     public function tasks()
     {
         return $this->hasMany(Task::class);
+    }
+
+    public function addTask($tasks)
+    {
+        return $this->tasks()->create(compact('tasks'));
     }
 }

@@ -21,7 +21,9 @@ Route::get('/', function () {
 
 Route::resource('/project', 'ProjectController');
 
-Route::resource('/project/task', 'TaskController');
+//Route::resource('/project/task', 'TaskController');
+
+Route::post('/projects/{project}/tasks', 'TaskController@store');
 
 Auth::routes();
 
